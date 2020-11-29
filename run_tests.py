@@ -1,7 +1,7 @@
 import unittest
  
-from tests.wizard_test import WizardTest
-from tests.location_test import LocationTest
+from tests.wizard_test import TestWizard
+from tests.location_test import TestLocation
  
  
 if __name__ == '__main__':
