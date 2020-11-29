@@ -7,7 +7,7 @@ import repositories.wizard_repository as wizard_repository
 # CREATE:
 # save function goes here
 def save(spell):
-    sql = "INSERT INTO spells (name, description, wizard) VALUES (%s, %s, %s) RETURNING *"
+    sql = "INSERT INTO spells (name, description, wizard_id) VALUES (%s, %s, %s) RETURNING *"
     values = [spell.name, spell.description, spell.wizard.id]
     results = run_sql(sql, values)
     id = results[0]['id']
@@ -23,7 +23,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        wizard = wizard_repository.select(row['wizard'])
+        wizard = wizard_repository.select(row['wizard_id'])
         spell = Spell(row['name'], row['description'], wizard, row['id'] )
         spells.append(spell)
     return spells
@@ -37,14 +37,14 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        wizard = wizard_repository.select(result['wizard'])
+        wizard = wizard_repository.select(result['wizard_id'])
         spell = Spell(result['name'], result['description'], wizard, result['id'] )
     return spell
 
 # UPDATE:
 # - update function goes here
 def update(spell):
-    sql = "UPDATE spells SET (name, description, wizard) = (%s, %s, %s) WHERE id = %s"
+    sql = "UPDATE spells SET (name, description, wizard_id) = (%s, %s, %s) WHERE id = %s"
     values = [spell.name, spell.description, spell.wizard.id, spell.wizard.id, spell.id]
     print(values)
     run_sql(sql, values)

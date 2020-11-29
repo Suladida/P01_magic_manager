@@ -22,7 +22,7 @@ CREATE TABLE spells (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     description VARCHAR(255),
-    wizard INT REFERENCES wizards(id)
+    wizard_id INT REFERENCES wizards(id)
 );
 
 CREATE TABLE casts (
