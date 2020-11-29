@@ -1,5 +1,5 @@
 -- Database table info goes here
-
+DROP TABLE IF EXISTS spells;
 DROP TABLE IF EXISTS wizards;
 DROP TABLE IF EXISTS locations;
 
@@ -17,3 +17,9 @@ CREATE TABLE locations (
     realm VARCHAR(255)
 );
 
+CREATE TABLE spells (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    description VARCHAR(255),
+    wizard INT REFERENCES wizards(id)
+);
