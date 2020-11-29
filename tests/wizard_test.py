@@ -5,7 +5,7 @@ import repositories.wizard_repository as wizard_repository
 
 class TestWizard(unittest.TestCase):
     def setUp(self):
-        self.wizard = Wizard("Norman", "Stargazer" "1000")
+        self.wizard = Wizard("Norman", "Stargazer", 1000)
 
     # @unittest.skip("Delete this line to run the test")
     def test_wizard_has_name(self):
