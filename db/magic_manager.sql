@@ -2,7 +2,6 @@
 
 DROP TABLE IF EXISTS wizards;
 DROP TABLE IF EXISTS locations;
-DROP TABLE IF EXISTS spells;
 
 CREATE TABLE wizards (
     id SERIAL PRIMARY KEY,
