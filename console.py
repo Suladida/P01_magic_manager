@@ -43,13 +43,15 @@ casts = cast_repository.select_all()
 # # Testing Update Function (Changed All)
 # wizard2 = Wizard("John", "Smith", 25, wizard2.id)
 # wizard_repository.update(wizard2)
-# print(wizard2)
 
-# Testing Update Spell (Changed Wizard)
-spell2 = Spell("Spell The Beans", "Relentless Honesty", wizard3.id, spell2.id)
-wizard_repository.update(wizard3)
-print(wizard3)
+# # Testing Update Spell (Changed Wizard)
+# spell2 = Spell("Spell The Beans", "Relentless Honesty", wizard3.id, spell2.id)
+# wizard_repository.update(wizard3)
+# print(wizard3)
 
-
+# Testing Update Location (Changed Supermarket Name)
+location1 = Location("Tesco", "Supermarket", "Mordor", location1.id)
+location_repository.update(location1)
+print(f"✅ Update Successful: {location1}")
 
 pdb.set_trace()
