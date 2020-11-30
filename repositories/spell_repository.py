@@ -46,8 +46,8 @@ def select(id):
 def update(spell):
     sql = "UPDATE spells SET (name, description, wizard_id) = (%s, %s, %s) WHERE id = %s"
     values = [spell.name, spell.description, spell.wizard.id, spell.id]
-    print(values)
     run_sql(sql, values)
+    print(f"✅ Spell Updated: {spell.name} {spell.description} {spell.wizard.id} {spell.id}")
 
 # DELETE:
 # - delete function goes here

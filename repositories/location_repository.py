@@ -43,6 +43,7 @@ def update(location):
     sql = "UPDATE locations SET (name, type, realm) = (%s, %s, %s) WHERE id = %s"
     values = [location.name, location.type, location.realm, location.id]
     run_sql(sql, values)
+    print(f"✅ Location Updated: {location.id} {location.name} {location.type} {location.realm}")
 
 # DELETE:
 # - delete function goes here

@@ -54,8 +54,8 @@ def select(id):
 def update(cast):
     sql = "UPDATE casts SET (deaths, details, wizard_id, spell_id, location_id) = (%s, %s, %s, %s, %s) WHERE id = %s"
     values = [cast.deaths, cast.details, cast.wizard.id, cast.spell.id, cast.location.id, cast.id]
-    print(values)
     run_sql(sql, values)
+    print(f"✅ Cast Updated: {cast.id} {cast.deaths} {cast.details} {cast.wizard.id} {cast.spell.id} {cast.location.id}")
 
 # DELETE:
 # - delete function goes here
