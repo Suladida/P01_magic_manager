@@ -61,3 +61,15 @@ def delete(id):
 def delete_all():
     sql = "DELETE FROM spells"
     run_sql(sql)
+
+# SHOW ALL CASTS
+# - spell_casts function goes here
+
+# SHOW ALL LOCATIONS
+# - location_spells function goes here
+
+# SHOW ALL WIZARDS
+# - assigned_wizards function goes here
+
+# TOTAL DEATHS
+# - total_deaths function goes here

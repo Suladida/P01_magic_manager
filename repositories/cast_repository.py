@@ -69,3 +69,6 @@ def delete(id):
 def delete_all():
     sql = "DELETE FROM casts"
     run_sql(sql)
+
+# TOTAL DEATHS
+# - total_deaths function goes here

@@ -2,9 +2,11 @@ from db.run_sql import run_sql
 from models.wizard import Wizard
 from models.spell import Spell
 from models.cast import Cast
+from models.location import Location
 import repositories.wizard_repository as wizard_repository
 import repositories.spell_repository as spell_repository
 import repositories.cast_repository as cast_repository
+import repositories.location_repository as location_repository
 
 # CREATE:
 # save function goes here
@@ -63,8 +65,8 @@ def delete_all():
     run_sql(sql)
 
 # SHOW ALL SPELLS:
-# - function to show all spells will go here
-def spells(wizard):
+# - wizard_spells function will go here
+def wizard_spells(wizard):
     spells = []
 
     sql = "SELECT * FROM spells WHERE wizard_id = %s"
@@ -76,7 +78,9 @@ def spells(wizard):
         spells.append(spell)
     return spells
 
-def casts(wizard):
+# SHOW ALL CASTS:
+# - wizard_casts function will go here
+def wizard_casts(wizard):
     casts = []
 
     sql = "SELECT * FROM casts WHERE wizard_id = %s"
@@ -84,6 +88,20 @@ def casts(wizard):
     results = run_sql(sql, values)
 
     for row in results:
-        cast = Cast(row['deaths'], row['details'], row['wizard_id'], row['location_id'], row['spell_id'], row['id'],)
+        cast = Cast(row['deaths'], row['details'], row['wizard_id'], row['spell_id'], row['location_id'], row['id'])
         casts.append(cast)
     return casts
+
+# # SHOW ALL LOCATIONS:
+# # - wizard_locations function will go here
+def wizard_locations(wizard):
+    locations = []
+
+    sql = "SELECT * FROM casts WHERE wizard_id = %s"
+    values = [wizard.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        location = Cast(row['deaths'], row['details'], row['wizard_id'], row['spell_id'], row['location_id'], row['id'])
+        locations.append(location)
+    return locations

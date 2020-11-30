@@ -57,3 +57,15 @@ def delete(id):
 def delete_all():
     sql = "DELETE FROM locations"
     run_sql(sql)
+
+# SHOW ALL CASTS
+# - location_casts function goes here
+
+# SHOW ALL WIZARDS
+# - location_wizards function goes here
+
+# SHOW ALL SPELLS
+# - location_spells function goes here
+
+# TOTAL DEATHS
+# - location_deaths function goes here

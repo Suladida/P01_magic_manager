@@ -3,6 +3,6 @@ class Cast:
         self.deaths = deaths
         self.details = details
         self.wizard = wizard
-        self.spell = spell
         self.location = location
+        self.spell = spell
         self.id = id

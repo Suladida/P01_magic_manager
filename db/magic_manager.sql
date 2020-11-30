@@ -30,6 +30,6 @@ CREATE TABLE casts (
     deaths INT,
     details VARCHAR(255),
     wizard_id INT REFERENCES wizards(id),
-    location_id INT REFERENCES locations(id),
-    spell_id INT REFERENCES spells(id)
+    spell_id INT REFERENCES spells(id),
+    location_id INT REFERENCES locations(id)
 );
