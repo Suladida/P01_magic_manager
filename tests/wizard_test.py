@@ -10,3 +10,4 @@ class TestWizard(unittest.TestCase):
     # @unittest.skip("Delete this line to run the test")
     def test_wizard_has_name(self):
         self.assertEqual("Norman", self.wizard.first_name)
+
