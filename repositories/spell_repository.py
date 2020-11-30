@@ -45,7 +45,7 @@ def select(id):
 # - update function goes here
 def update(spell):
     sql = "UPDATE spells SET (name, description, wizard_id) = (%s, %s, %s) WHERE id = %s"
-    values = [spell.name, spell.description, spell.wizard.id, spell.wizard.id, spell.id]
+    values = [spell.name, spell.description, spell.wizard.id, spell.id]
     print(values)
     run_sql(sql, values)
 

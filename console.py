@@ -19,6 +19,8 @@ wizard1 = Wizard("Gandalferoo", "DePurple", 3000)
 wizard_repository.save(wizard1)
 wizard2 = Wizard("Merlin", "McSpells", 1500)
 wizard_repository.save(wizard2)
+wizard3 = Wizard("Captain", "Magicpants", 200)
+wizard_repository.save(wizard3)
 
 location1 = Location("Asda", "Supermarket", "Mordor")
 location_repository.save(location1)
@@ -27,6 +29,8 @@ location_repository.save(location2)
 
 spell1 = Spell("Ripe Old Mage", "Age Acceleration", wizard1)
 spell_repository.save(spell1)
+spell2 = Spell("Spell The Beans", "Relentless Honesty", wizard2)
+spell_repository.save(spell2)
 
 cast1 = Cast(5,"5 People Aged Beyond Saving", wizard2, spell1, location1)
 cast_repository.save(cast1)
@@ -36,9 +40,16 @@ wizards = wizard_repository.select_all()
 spells = spell_repository.select_all()
 casts = cast_repository.select_all()
 
-# Testing Update Function
-wizard2 = Wizard("John", "Smith", 25, wizard2.id)
-wizard_repository.update(wizard2)
-print(wizard2)
+# # Testing Update Function (Changed All)
+# wizard2 = Wizard("John", "Smith", 25, wizard2.id)
+# wizard_repository.update(wizard2)
+# print(wizard2)
+
+# Testing Update Spell (Changed Wizard)
+spell2 = Spell("Spell The Beans", "Relentless Honesty", wizard3.id, spell2.id)
+wizard_repository.update(wizard3)
+print(wizard3)
+
+
 
 pdb.set_trace()
