@@ -36,4 +36,9 @@ wizards = wizard_repository.select_all()
 spells = spell_repository.select_all()
 casts = cast_repository.select_all()
 
+# Testing Update Function
+wizard2 = Wizard("John", "Smith", 25, wizard2.id)
+wizard_repository.update(wizard2)
+print(wizard2)
+
 pdb.set_trace()
